@@ -1,4 +1,0 @@
-"/Users/KSHMR/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/191.7479.33/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/Users/KSHMR/Dropbox/Maestría/Computo Cientifico de Alto Rendimiento/Códigos/C Language"
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/KSHMR/Dropbox/Maestría/Computo Cientifico de Alto Rendimiento/Códigos/C Language/cmake-build-debug
