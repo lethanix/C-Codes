@@ -220,11 +220,6 @@
               <item name="C_Language" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="~/Dropbox/Maestría/Computo Cientifico de Alto Rendimiento/Códigos/C Language" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
-            <path>
-              <item name="C_Language" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/Dropbox/Maestría/Computo Cientifico de Alto Rendimiento/Códigos/C Language" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="cmake-build-debug" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -304,12 +299,12 @@
       <workItem from="1556940189219" duration="47000" />
       <workItem from="1561084086959" duration="4691000" />
       <workItem from="1561166151730" duration="4625000" />
-      <workItem from="1561941049703" duration="6598000" />
+      <workItem from="1561941049703" duration="6792000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130379000" />
+    <option name="totallyTimeSpent" value="130573000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
