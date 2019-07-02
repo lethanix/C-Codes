@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/KSHMR/Dropbox/Maestría/Computo Cientifico de Alto Rendimiento/Códigos/C Language/box-muller.c
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+math.h
+-
+stdbool.h
+-
+errno.h
+-
+string.h
+-
+

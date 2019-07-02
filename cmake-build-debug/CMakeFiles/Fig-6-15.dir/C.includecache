@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/KSHMR/Dropbox/Maestría/Computo Cientifico de Alto Rendimiento/Códigos/C Language/Fig-6-15.c
+stdio.h
+-
+stdlib.h
+-
+errno.h
+-
+string.h
+-
+

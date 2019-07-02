@@ -1,0 +1,4 @@
+/Users/KSHMR/Dropbox/Maestría/Computo Cientifico de Alto Rendimiento/Códigos/C Language/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/KSHMR/Dropbox/Maestría/Computo Cientifico de Alto Rendimiento/Códigos/C Language/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/KSHMR/Dropbox/Maestría/Computo Cientifico de Alto Rendimiento/Códigos/C Language/cmake-build-debug/CMakeFiles/randomBM.dir
+/Users/KSHMR/Dropbox/Maestría/Computo Cientifico de Alto Rendimiento/Códigos/C Language/cmake-build-debug/CMakeFiles/boxmuller.dir
