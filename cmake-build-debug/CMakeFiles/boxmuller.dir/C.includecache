@@ -15,10 +15,4 @@ time.h
 -
 math.h
 -
-stdbool.h
--
-errno.h
--
-string.h
--
 
