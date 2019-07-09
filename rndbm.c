@@ -20,15 +20,17 @@
  *                                      Name changed to: rndbm.
  */
 
+/** Implements this interface    */
+#include "rndbm.h"
+
+
 /** Import needed interfaces    */
-#include <stdio.h>
+//#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
 #include <stdarg.h>
 
-/** Implements this interface    */
-#include "rndbm.h"
 
 /** Set the seed once   */
 #ifdef RNDBM_H
@@ -52,9 +54,6 @@ static int recursiveBM(double *, int n);
 
 /** For one value   */
 static double boxMuller();
-
-// Macro to get the number of elements in the array
-#define SIZE(x) ( (int)( sizeof(x) / sizeof(x[0]) ) )
 
 /**************************************************************/
 /**************************************************************/
@@ -125,10 +124,10 @@ static int recursiveBM(double *number, int n) {
         // Generate the last BM-random value
         number[n] = boxMuller();
 
-        // End of function
-        return 0;
     }
 
+    // End of function
+    return 0;
 }
 
 /**************************************************************/
