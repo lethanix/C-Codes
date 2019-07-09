@@ -23,7 +23,13 @@
  *****************************
  */
 
-/* How to use:
+/* How to use setSeed():
+ *      This MUST be called FIRST in order to set the seed
+ *      only once in the program.
+ */
+extern void setSeed();
+
+/* How to use randomBM():
  *      The first int argument indicates the number of the
  *      following arguments.
  *

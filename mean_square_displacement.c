@@ -14,6 +14,8 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <errno.h>
+#include <string.h>
 
 #include "rndbm.h"
 
@@ -55,20 +57,22 @@ int main () {
 
     /** Data dictionary: declare variable types & definitions.*/
 //    static const int t=(int)(steps*dt); // Resultant time.
-    static double x[POS][N];        // Position of particles for
-                                    // each moment.
+    static double x[POS][N];        // Position of all particles.
     static double msd[POS];         // MSD for each moment.
     /** Note: static variables are automatically initialized to
      * zero, thus, the position of all particles are and the MSD
      * are zero.  */
 
+    /** Set the seed for randomBM (only used once)  */
+    setSeed();
+
     /** Compute all positions. */
     eachPosition(x, 1);
 
-    // Get the Mean Square Displacement for all time/steps.
+    /** Get the Mean Square Displacement for each time. */
     MSD(x, msd);
 
-    // Save the info.
+    /** Save the info.  */
     saveIt(x, msd);
 
     return 0;
@@ -170,6 +174,9 @@ void MSD( double x[POS][N], double *result ) {
     /** Data dictionary: declare variable types & definitions */
     double cache = 0;       // Used to temporary save values.
 
+    // Reset back to zero for precaution.
+    memset(result, 0, POS);
+
     for (int pos = 1; pos < POS ; ++pos) {
         for (int part = 0; part < N; ++part) {
             cache = cache + pow( x[pos][part] - x[0][part], 2 );
@@ -187,25 +194,25 @@ void MSD( double x[POS][N], double *result ) {
 void saveIt(double x[POS][N], double *m){
 
     /** Data dictionary: declare variable types & definitions */
-    FILE *pos;      // Pointer to the file for the positions.
-    FILE *msd;      // Pointer to the file for the MSD.
+    FILE *fpos;      // Pointer to the file for the positions.
+    FILE *fmsd;      // Pointer to the file for the MSD.
 
     // Open the files to write.
-    pos = fopen("positions.txt", "w");
-    msd = fopen("msd.txt", "w");
+    fpos = fopen("positions.txt", "w");
+    fmsd = fopen("msd.txt", "w");
 
     // Save the info.
     for (int pos = 0; pos < POS; ++pos) {
         // Write the MSD
-        fprintf(msd, "%lf\n", m[pos] );
+        fprintf(fmsd, "%5d\t%lf\n", pos, m[pos] );
         for (int part = 0; part < N; ++part) {
             // Write the positions of all particles
-            fprintf(pos, "%lf\t", x[pos][part]);
+            fprintf(fpos, "%lf\t", x[pos][part]);
         }
-        fprintf(pos, "\n");
+        fprintf(fpos, "\n");
     }
 
-    fclose(pos);
-    fclose(msd);
+    fclose(fpos);
+    fclose(fmsd);
 
 }   /** End of saveIt.     */

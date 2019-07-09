@@ -32,12 +32,6 @@
 #include <stdarg.h>
 
 
-/** Set the seed once   */
-#ifdef RNDBM_H
-#define SEED srand48( time(NULL) )
-#else
-#define SEED 1
-#endif
 
 // Pi value
 #define PI 3.1415926535898
@@ -62,14 +56,19 @@ static double boxMuller();
  *****************************
  */
 
+void setSeed() {
+    /** Set the seed once   */
+    srand48( time(NULL) );
+}
+
+
+/**************************************************************/
+
 int randomBM(int N, ...) {
     /*
      * Purpose:
      *  To generate random values according to Box & Muller.
      */
-
-    // Set seed once
-    SEED;
 
     // Create va_list variable
     va_list valist;
