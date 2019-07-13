@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>15947434-307B-41A5-9CC0-0A68B18230AB</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>15947434-307B-41A5-9CC0-0A68B18230AB.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Intel-C project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>rndbm</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug rndbm</string>
+			<key>timeStartedRecording</key>
+			<real>584579308.87358606</real>
+			<key>timeStoppedRecording</key>
+			<real>584579309.28695405</real>
+			<key>title</key>
+			<string>Debug rndbm</string>
+			<key>uniqueIdentifier</key>
+			<string>15947434-307B-41A5-9CC0-0A68B18230AB</string>
+		</dict>
+		<key>26A87CFB-B183-47EB-858A-9502580B3A3C</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>26A87CFB-B183-47EB-858A-9502580B3A3C.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Intel-C project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Intel-C</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug Intel-C</string>
+			<key>timeStartedRecording</key>
+			<real>584582792.36919701</real>
+			<key>timeStoppedRecording</key>
+			<real>584582809.72273004</real>
+			<key>title</key>
+			<string>Debug Intel-C</string>
+			<key>uniqueIdentifier</key>
+			<string>26A87CFB-B183-47EB-858A-9502580B3A3C</string>
+		</dict>
+		<key>8CFD7236-7E7E-48C6-B711-C2625E2F942A</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>8CFD7236-7E7E-48C6-B711-C2625E2F942A.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Intel-C project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Intel-C</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug Intel-C</string>
+			<key>timeStartedRecording</key>
+			<real>584584048.81737304</real>
+			<key>timeStoppedRecording</key>
+			<real>584584059.85141206</real>
+			<key>title</key>
+			<string>Debug Intel-C</string>
+			<key>uniqueIdentifier</key>
+			<string>8CFD7236-7E7E-48C6-B711-C2625E2F942A</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

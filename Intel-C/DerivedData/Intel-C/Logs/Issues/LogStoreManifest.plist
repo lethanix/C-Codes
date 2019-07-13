@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>6AC50ADC-3E75-450B-A88A-1B05163E48AA</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.tool</string>
+			<key>fileName</key>
+			<string>6AC50ADC-3E75-450B-A88A-1B05163E48AA.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>Intel-C-dtydhrccqbuqwhbwdvvxfgyaokdt</string>
+			<key>timeStartedRecording</key>
+			<real>584584046.99456596</real>
+			<key>timeStoppedRecording</key>
+			<real>584584048.80573404</real>
+			<key>title</key>
+			<string>Build target Intel-C</string>
+			<key>uniqueIdentifier</key>
+			<string>6AC50ADC-3E75-450B-A88A-1B05163E48AA</string>
+		</dict>
+		<key>DBFDA253-C4D1-486B-A6EF-E83F2E07E9F1</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.tool</string>
+			<key>fileName</key>
+			<string>DBFDA253-C4D1-486B-A6EF-E83F2E07E9F1.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>rndbm-dtydhrccqbuqwhbwdvvxfgyaokdt</string>
+			<key>timeStartedRecording</key>
+			<real>584579329.55059898</real>
+			<key>timeStoppedRecording</key>
+			<real>584579329.55791998</real>
+			<key>title</key>
+			<string>Build target rndbm</string>
+			<key>uniqueIdentifier</key>
+			<string>DBFDA253-C4D1-486B-A6EF-E83F2E07E9F1</string>
+		</dict>
+	</dict>
+	<key>preserveOldLogs</key>
+	<true/>
+</dict>
+</plist>
