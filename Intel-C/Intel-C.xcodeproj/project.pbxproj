@@ -7,11 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4393F57822D7F77800EE1089 /* rndbm.c in Sources */ = {isa = PBXBuildFile; fileRef = 4393F57622D7F77800EE1089 /* rndbm.c */; };
-		4393F58E22D8057E00EE1089 /* MSD.c in Sources */ = {isa = PBXBuildFile; fileRef = 4393F58D22D8057E00EE1089 /* MSD.c */; };
+		433A694322DD5A7B00DFBDF9 /* MSD.c in Sources */ = {isa = PBXBuildFile; fileRef = 433A692F22DD129E00DFBDF9 /* MSD.c */; };
+		433A694422DD5A8A00DFBDF9 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 433A693822DD18E500DFBDF9 /* main.c */; };
+		433A694522DD5BA400DFBDF9 /* rndbm.c in Sources */ = {isa = PBXBuildFile; fileRef = 4393F57622D7F77800EE1089 /* rndbm.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
+		433A693D22DD18FB00DFBDF9 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.intel.compilers.icc.latest;
+			fileType = sourcecode.c;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
 		4393F57322D7F59600EE1089 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
 			compilerSpec = com.intel.compilers.icc.19_0_0;
@@ -24,6 +34,15 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		433A693422DD18E400DFBDF9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		4393F56722D7F58D00EE1089 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -36,13 +55,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		433A692F22DD129E00DFBDF9 /* MSD.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MSD.c; sourceTree = "<group>"; };
+		433A693622DD18E400DFBDF9 /* try */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = try; sourceTree = BUILT_PRODUCTS_DIR; };
+		433A693822DD18E500DFBDF9 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		4393F56922D7F58D00EE1089 /* Intel-C */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Intel-C"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4393F57422D7F77800EE1089 /* rndbm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rndbm.h; sourceTree = "<group>"; };
 		4393F57622D7F77800EE1089 /* rndbm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rndbm.c; sourceTree = "<group>"; };
-		4393F58D22D8057E00EE1089 /* MSD.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MSD.c; sourceTree = "<group>"; wrapsLines = 1; xcLanguageSpecificationIdentifier = xcode.lang.c; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		433A693322DD18E400DFBDF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4393F56622D7F58D00EE1089 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,10 +81,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		433A693722DD18E500DFBDF9 /* try */ = {
+			isa = PBXGroup;
+			children = (
+				433A693822DD18E500DFBDF9 /* main.c */,
+			);
+			path = try;
+			sourceTree = "<group>";
+		};
 		4393F56022D7F58D00EE1089 = {
 			isa = PBXGroup;
 			children = (
 				4393F56B22D7F58D00EE1089 /* Intel-C */,
+				433A693722DD18E500DFBDF9 /* try */,
 				4393F56A22D7F58D00EE1089 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				4393F56922D7F58D00EE1089 /* Intel-C */,
+				433A693622DD18E400DFBDF9 /* try */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,7 +110,7 @@
 		4393F56B22D7F58D00EE1089 /* Intel-C */ = {
 			isa = PBXGroup;
 			children = (
-				4393F58D22D8057E00EE1089 /* MSD.c */,
+				433A692F22DD129E00DFBDF9 /* MSD.c */,
 				4393F57422D7F77800EE1089 /* rndbm.h */,
 				4393F57622D7F77800EE1089 /* rndbm.c */,
 			);
@@ -82,6 +120,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		433A693522DD18E400DFBDF9 /* try */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 433A693A22DD18E500DFBDF9 /* Build configuration list for PBXNativeTarget "try" */;
+			buildPhases = (
+				433A693222DD18E400DFBDF9 /* Sources */,
+				433A693322DD18E400DFBDF9 /* Frameworks */,
+				433A693422DD18E400DFBDF9 /* CopyFiles */,
+			);
+			buildRules = (
+				433A693D22DD18FB00DFBDF9 /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = try;
+			productName = try;
+			productReference = 433A693622DD18E400DFBDF9 /* try */;
+			productType = "com.apple.product-type.tool";
+		};
 		4393F56822D7F58D00EE1089 /* Intel-C */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4393F57022D7F58D00EE1089 /* Build configuration list for PBXNativeTarget "Intel-C" */;
@@ -110,6 +166,9 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Louis Murguia";
 				TargetAttributes = {
+					433A693522DD18E400DFBDF9 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 					4393F56822D7F58D00EE1089 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
@@ -128,23 +187,50 @@
 			projectRoot = "";
 			targets = (
 				4393F56822D7F58D00EE1089 /* Intel-C */,
+				433A693522DD18E400DFBDF9 /* try */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		433A693222DD18E400DFBDF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				433A694422DD5A8A00DFBDF9 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4393F56522D7F58D00EE1089 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4393F58E22D8057E00EE1089 /* MSD.c in Sources */,
-				4393F57822D7F77800EE1089 /* rndbm.c in Sources */,
+				433A694322DD5A7B00DFBDF9 /* MSD.c in Sources */,
+				433A694522DD5BA400DFBDF9 /* rndbm.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		433A693B22DD18E500DFBDF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GB4PRBCNM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		433A693C22DD18E500DFBDF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GB4PRBCNM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		4393F56E22D7F58D00EE1089 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -279,6 +365,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		433A693A22DD18E500DFBDF9 /* Build configuration list for PBXNativeTarget "try" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				433A693B22DD18E500DFBDF9 /* Debug */,
+				433A693C22DD18E500DFBDF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4393F56422D7F58D00EE1089 /* Build configuration list for PBXProject "Intel-C" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

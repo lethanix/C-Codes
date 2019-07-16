@@ -16,12 +16,9 @@
 #include <math.h>
 #include <errno.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include "rndbm.h"
-
-
-/**************************************************************/
-/**************************************************************/
 
 
 /** Declaration of macros:
@@ -34,18 +31,17 @@
 /** Declaration of functions:
  *****************************
  */
- int eachPosition( double [POS][N], int );
- int eachParticle( double [POS][N], int , const int * );
+ void eachPosition( double [POS][N], int );
+ void eachParticle( double [POS][N], int , const int );
  void MSD( double [POS][N], double * );
  void saveIt(double [POS][N], double *);
 
 
 /** Data dictionary: declare global variable types & definitions.
  *****************************
- * */
+ */
  static const double dt = 0.0001;       // Size of step in time.
  static const double D = 1.0;           // Diffusion coefficient.
-
 
 
 /**************************************************************/
@@ -55,12 +51,13 @@
 int main () {
 
     /** Data dictionary: declare variable types & definitions.*/
-//    static const int t=(int)(steps*dt); // Resultant time.
     static double x[POS][N];        // Position of all particles.
     static double msd[POS];         // MSD for each moment.
+    
     /** Note: static variables are automatically initialized to
-     * zero, thus, the position of all particles are and the MSD
-     * are zero.  */
+     * zero, thus, the position of all the particles and the MSD
+     * are zero.
+     */
 
     /** Set the seed for randomBM (only used once)  */
     setSeed();
@@ -78,7 +75,6 @@ int main () {
 }
 
 
-
 /**************************************************************/
 /**************************************************************/
 
@@ -87,81 +83,60 @@ int main () {
  *****************************
  */
 
-int eachPosition( double x[POS][N], int pos_num ) {
+void eachPosition( double x[POS][N], int pos_num ) {
     /** Runs through all positions for each particle.
-     *      - pos_num must start with 1;    */
+     *      - pos_num must start with 1;
+     */
+    
+    // Base Case: returns to the calling function.
+    if ( pos_num > POS )
+        return;
+    
+    /** Calculate the position given by pos_num and go to the
+     * next one.
+     */
 
-    /** Data dictionary: declare variable types & definitions.*/
-    int act_pos;        // The actual position.
+    // Get the actual position for all particles.
+    eachParticle(x, 0, pos_num);
 
-    // Verify the actual position (number of steps) and
-    // implement the adequate code.
-    act_pos = POS - pos_num;
+    // Go to the next position.
+    eachPosition(x, pos_num+1);
 
-    if ( act_pos >= 0 ) {
-        /** Calculate the position given by post_num and move
-         * to the next one.     */
-
-        // Get the position of the actual step for all particles.
-        eachParticle(x, 0, &pos_num);
-
-        // Go to the next position.
-        eachPosition(x, pos_num+1);
-    }
-
-    // Return to main
-    return 0;
-
-}   /** End of eachPosition.    */
+}
+    /** End of eachPosition.    */
 
 
 /**************************************************************/
 
 
-int eachParticle( double x[POS][N], int part_num,
-        const int *which_pos ) {
-    /** Modify the next position of each particle.
+void eachParticle( double x[POS][N], int part_num,
+        const int pos_num ) {
+    /** Modify the position of each particle.
      *      - part_num must start with 0;
-     *      - which_pos must start with 1;  */
+     *      - pos_num must start with 1;  */
+    
+    // Base Case: returns to the calling function.
+    if ( part_num > N )
+        return;
 
+    /** Modify the position of the actual particle and move
+    * to the next one. */
+    
     /** Data dictionary: declare variable types & definitions */
     double G;           // Random value (BM).
-    int which_part;     // The actual particle.
 
-    // Verify which particle will be modified and implement the
-    // corresponding code.
-    which_part = N - part_num;
+    // Get the random value using the Box-Muller Transform.
+    randomBM(1, &G);
 
-    if ( which_part > 0 ) {
-        /** Modify the position of the actual particle and move
-         * to the next one. */
+    // Modify the position.
+    x[pos_num][part_num] = x[pos_num-1][part_num] +
+                            sqrt(2 * D * dt) * G;
 
-        // Get the random value using the Box-Muller Transform.
-        randomBM(1, &G);
+    // Go to the next particle.
+    eachParticle(x, part_num+1, pos_num);
 
-        // Modify the position.
-        x[*which_pos][which_part] = x[*which_pos-1][which_part]
-                + sqrt(2.* D * dt) * G;
-
-        // Go to the next particle.
-        eachParticle(x, part_num+1, which_pos);
-
-    } else {
-        /** Modify the position of the last particle.   */
-
-        // Get the random value using the Box-Muller Transform.
-        randomBM(1, &G);
-
-        // Modify the position.
-        x[*which_pos][which_part] = x[*which_pos-1][which_part]
-                                    + sqrt(2.* D * dt) * G;
-
-    }
-
-    // Return to eachPosition.
-    return 0;
-
-}   /** End of eachParticle.    */
+}
+    /** End of eachParticle.    */
 
 
 /**************************************************************/
@@ -186,7 +161,8 @@ void MSD( double x[POS][N], double *result ) {
         cache = 0;
     }
 
-}   /** End of MSD.     */
+}
+    /** End of MSD.     */
 
 
 /**************************************************************/
@@ -201,13 +177,20 @@ void saveIt(double x[POS][N], double *m){
     int part;       // Index of particle
 
     // Open the files to write.
-    fpos = fopen("positions.txt", "w");
-    fmsd = fopen("msd.txt", "w");
+    fpos = fopen("positions2.txt", "w");
+    fmsd = fopen("msd2.txt", "w");
+    
+    // Verify if there was a problem opening the files
+    if ( fpos == NULL || fmsd == NULL ) {
+        fprintf(stderr, "Error opening a file: %s\n",
+                strerror(errno) );
+        exit(errno);
+    }
 
     // Save the info.
     for ( pos = 0; pos < POS; ++pos) {
         // Write the MSD
-        fprintf(fmsd, "%5d\t%lf\n", pos, m[pos] );
+        fprintf(fmsd, "%lf\t%lf\n", pos*dt , m[pos] );
         
         for ( part = 0; part < N; ++part) {
             // Write the positions of all particles
@@ -219,4 +202,5 @@ void saveIt(double x[POS][N], double *m){
     fclose(fpos);
     fclose(fmsd);
 
-}   /** End of saveIt.     */
+}
+    /** End of saveIt.     */
