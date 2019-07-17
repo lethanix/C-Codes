@@ -192,6 +192,9 @@ void saveIt(double x[POS][N], double *m){
         // Write the MSD
         fprintf(fmsd, "%lf\t%lf\n", pos*dt , m[pos] );
         
+        // Write the time
+        fprintf(fpos, "%lf\t", pos*dt);
+        
         for ( part = 0; part < N; ++part) {
             // Write the positions of all particles
             fprintf(fpos, "%lf\t", x[pos][part]);
