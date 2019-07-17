@@ -1,6 +1,6 @@
-Intel-C.xcodeproj
+Intel-C.xcodeproj/
 .idea
 cmake-build-debug
 .DS_Store
 CMakeLists.txt
-DerivedData
+DerivedData/
