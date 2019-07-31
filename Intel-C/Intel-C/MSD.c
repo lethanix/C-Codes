@@ -3,7 +3,7 @@
 /**************************************************************/
 
 /** Purpose:
- *      To obtain the Mean Square Displacement (MSD) of N parti-
+ *      To obtain the Mean Squared Displacement (MSD) of N parti-
  *      cles, with brownian motion, without parallelization.
  *
  *  Record of revisions:
@@ -25,7 +25,7 @@
  *****************************
  */
  #define POS 10000      // Number of steps/positions.
- #define N 1000         // Number of particles.
+ #define N 2         // Number of particles.
 
 
 /** Declaration of functions:
@@ -87,15 +87,15 @@ void eachPosition( double x[POS][N], int pos_num ) {
     /** Runs through all positions for each particle.
      *      - pos_num must start with 1;
      */
-    
+     printf("%d\t", pos_num);
     // Base Case: returns to the calling function.
-    if ( pos_num > POS )
+    if ( pos_num >= POS )
         return;
     
     /** Calculate the position given by pos_num and go to the
      * next one.
      */
-
+	 printf("%d\n", pos_num);
     // Get the actual position for all particles.
     eachParticle(x, 0, pos_num);
 
@@ -116,7 +116,7 @@ void eachParticle( double x[POS][N], int part_num,
      *      - pos_num must start with 1;  */
     
     // Base Case: returns to the calling function.
-    if ( part_num > N )
+    if ( part_num >= N )
         return;
 
     /** Modify the position of the actual particle and move
