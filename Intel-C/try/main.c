@@ -9,12 +9,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define POS 3
-#define N 5
+#define POS 2
+#define N 4
 
-static double x[POS][N];
+//static double x[POS][N];
+double **x = NULL;
 
-void getPosition( double x[POS][N], int position,
+void setVariables(const int mypos, const int myn){
+	
+	x = (double **)calloc( mypos, sizeof(double*) );
+	if ( x == NULL)
+		exit(1);
+	
+	int i;
+	for (i = 0; i<mypos; i++) {
+		x[i] = (double*)calloc( myn, sizeof(double));
+		if ( x[i] == NULL )
+			exit(1);
+	}
+}
+
+void getPosition( double x[][N], int position,
                  int particle) {
     // Base Case
     if ( position > POS )
@@ -24,7 +39,7 @@ void getPosition( double x[POS][N], int position,
     getPosition(x, position + 1, 0);
 }
 
-void setUniformDist(double a, int part_num) {
+void setUniformDist( double a, int part_num) {
     
     // Base Case
     if (part_num == N)
@@ -38,9 +53,9 @@ void setUniformDist(double a, int part_num) {
     
 }
 
-void setInitialPosition(double a) {
+void setInitialPosition( double a) {
     if (a == 0)
-        return;
+		return;
     else
         setUniformDist(a,0);
 }
@@ -49,19 +64,24 @@ void print() {
     int i,j;
     for (i=0; i<POS; i++) {
         for (j=0; j<N ; j++) {
-            printf("%lf\t", x[i][j]);
+			printf("%lf\t", x[i][j]);
         }
         printf("\n");
     }
 }
 
+void tryPtr(int * value) {
+	printf("Value: %d\n", *value);
+}
+
+
 int main(int argc, const char * argv[]) {
-    // insert code here...
+    /**
     double a = 0;
     char buff[BUFSIZ];  // Input buffer
     char * p;          // Buffer pointer
     // getPosition(x, 0, 0);
-    
+	setVariables(POS, N);
     printf("What is the initial position of particles?\n"
            "\t1)Enter 0 to position all particles in 0.\n"
            "\n\t2)Enter a value to position them uniformly\n"
@@ -69,7 +89,7 @@ int main(int argc, const char * argv[]) {
            "Value: ");
     fgets(buff, BUFSIZ, stdin);
     a = strtod(buff, &p);
-    
+	
     printf("\nBEFORE:\n");
     print();
     
@@ -78,11 +98,18 @@ int main(int argc, const char * argv[]) {
     printf("\nAFTER:\n");
     print();
     
-    
-    
+	int iRow;
+	for (iRow =0 ; iRow < POS ; iRow++)
+	{
+		free(x[iRow]); // free allocated memory
+	}
+
+	free(x);
     
     // double example[2][2] = {0.0};
-    
+	 */
+	int a = 500;
+	tryPtr(&a);
     return 0;
 }
 
