@@ -7,15 +7,10 @@ int main()
 	/** Data dictionary: declare variable types & definitions.*/
 	char buff[BUFSIZ];	// Input buffer.
 	char * ptr;			// Buffer pointer.
-	int loop = 0;		// Looping variable.
-	
 	int noAvg = 1;		// Number of execution to average MSD.
 	int noPart = 0;		// Number of particles.
 	int noPos = 0;		// Number of positions.
 	double a = 0;		// Diameter of the particle.
-	
-	/** Set the seed once.		*/
-	// seed();
 	
 	/** Ask the user for information.	*/
 	printf("\t Brownian Dynamics - Initial Values\n"

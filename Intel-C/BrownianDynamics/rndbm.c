@@ -25,7 +25,6 @@
 
 
 /** Import needed interfaces    */
-//#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
@@ -49,6 +48,12 @@ static int recursiveBM(double *, int n);
 /** For one value   */
 static double boxMuller(void);
 
+/** For the needed seed; only used one in the program   */
+extern void setSeed(void);
+
+/** The function used by the main program to obtain the numbers */
+extern void randomBM(int , ...);
+
 /**************************************************************/
 /**************************************************************/
 
@@ -56,7 +61,7 @@ static double boxMuller(void);
  *****************************
  */
 
-void setSeed() {
+extern void setSeed() {
     /** Set the seed once   */
     srand48( time(NULL) );
 }
@@ -64,7 +69,7 @@ void setSeed() {
 
 /**************************************************************/
 
-int randomBM(int N, ...) {
+extern void randomBM(int N, ...) {
     /*
      * Purpose:
      *  To generate random values according to Box & Muller.
@@ -94,7 +99,7 @@ int randomBM(int N, ...) {
     va_end(valist);
 
     // End of function
-    return 0;
+    return;
 }
 
 

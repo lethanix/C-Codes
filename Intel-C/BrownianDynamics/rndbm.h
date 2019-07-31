@@ -2,7 +2,7 @@
 /********************     Box-Muller      *********************/
 /**************************************************************/
 
-/*  Purpose:
+/** Purpose:
  *      To generate values from the standard normal distribution
  *      with mean 0 and standard deviation 1, using the standard
  *      Box-Muller transform.
@@ -43,7 +43,7 @@ extern void setSeed(void);
  *      The variable/array where the value(s) is/are saved
  *      must be of type double; size_array must be int.
  */
-extern int randomBM(int , ...);
+extern void randomBM(int , ...);
 
 
 #endif // RNDBM_H
