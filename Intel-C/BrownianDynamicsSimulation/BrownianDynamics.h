@@ -32,13 +32,15 @@
  *		noPositions:	number of positions for all particles,
  *					i.e. how many time.
  *		noParticles: number of particles used in simulation.
- *		diameter:	the particles' initial position will be
+ *		aValue:		the particles' initial position will be
  *					set uniformly distributed according to
  *					this value.
+ *		force:		character specifying if an external force
+ *					exists ('y' -> yes,'n' -> no).
  */
 extern void setInitialValues(int * noAverage, int * noPosition,
 							 int * noParticles,
-							 double * diameter);
+							 double * aValue, char * force);
 
 
 /* How to use startDynamic():

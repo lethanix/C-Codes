@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
+#include <time.h>
 #define POS 2
 #define N 4
 
@@ -71,9 +73,12 @@ void print() {
 }
 
 void tryPtr(int * value) {
-	printf("Value: %d\n", *value);
+	printf("a: %d\n", abs(*value) );
 }
 
+void passStr(char m[]) {
+	printf("String: %s\n",m);
+}
 
 int main(int argc, const char * argv[]) {
     /**
@@ -108,8 +113,23 @@ int main(int argc, const char * argv[]) {
     
     // double example[2][2] = {0.0};
 	 */
-	int a = 500;
+	int a = -500;
+	double value = 1.3e3;
+	char mssg[10] = "hola";
+	char buff[BUFSIZ];	// Input buffer.
+	char force = 'c';
 	tryPtr(&a);
+	value 			= value + 2000;
+	printf("Value: %lf\n",value);
+	
+	printf("- Is there an external force? (y/n): ");
+	fgets(buff, BUFSIZ, stdin);
+	force 						= buff[0];
+	printf("your input: %c\n", force);
+	time_t now;
+	time(&now);
+	printf("\n\tTime: %s\n", ctime(&now) );
+	passStr(mssg);
     return 0;
 }
 

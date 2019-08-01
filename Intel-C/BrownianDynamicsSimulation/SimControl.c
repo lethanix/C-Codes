@@ -7,10 +7,11 @@ int main()
 	/** Data dictionary: declare variable types & definitions.*/
 	char buff[BUFSIZ];	// Input buffer.
 	char * ptr;			// Buffer pointer.
-	int noAvg = 1;		// Number of execution to average MSD.
-	int noPart = 0;		// Number of particles.
-	int noPos = 0;		// Number of positions.
-	double a = 0;		// Diameter of the particle.
+	int noAvg 	= 1;		// Number of execution to average MSD.
+	int noPart	= 0;		// Number of particles.
+	int noPos 	= 0;		// Number of positions.
+	double a		= 0;		// Interval of initial positions.
+	char force	= 'n';	// Character specifying external force.
 	
 	/** Ask the user for information.	*/
 	printf("\t Brownian Dynamics - Initial Values\n"
@@ -31,6 +32,11 @@ int main()
 	fgets(buff, BUFSIZ, stdin);
 	noPos = (int) strtol(buff, &ptr, 10);
 	
+	// Request force information.
+	printf("- Is there an external force? (y/n): ");
+	fgets(buff, BUFSIZ, stdin);
+	force = buff[0];
+	
 	// Request the initial position of particles.
 	printf("- What is the initial position of particles?\n"
 		   "\t1)Enter 0 to position all particles in 0.\n"
@@ -41,7 +47,7 @@ int main()
 	a = strtod(buff, &ptr);
 	
 	/** Initialize the needed values.	*/
-	setInitialValues(&noAvg, &noPos, &noPart, &a);
+	setInitialValues(&noAvg, &noPos, &noPart, &a, &force);
 	
 	/** Start the simulation.	*/
 	startDynamic();
