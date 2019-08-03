@@ -12,7 +12,7 @@
 #include <math.h>
 #include <time.h>
 
-#include "BrownianDynamics.h"
+#include "rndbm.h"
 
 #define POS 2
 #define N 4

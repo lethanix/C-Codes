@@ -25,7 +25,7 @@
 /** Declaration of macros:
  *****************************
  */
- #define POS 10000      // Number of steps/positions.
+ #define POS 100      // Number of steps/positions.
  #define N 2         // Number of particles.
 
 
